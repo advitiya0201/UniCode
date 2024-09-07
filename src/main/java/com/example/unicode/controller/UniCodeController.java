@@ -34,4 +34,10 @@ public class UniCodeController {
         }
         return new ResponseEntity<>(ipAddress, HttpStatus.OK);
     }
+
+    @PostMapping("/hash-code")
+    public ResponseEntity<String> getHashCode(@RequestParam String bitsId, @RequestParam String ipAddress) {
+        String hashCode = service.getHashCode(bitsId, ipAddress);
+        return new ResponseEntity<>(hashCode, HttpStatus.OK);
+    }
 }

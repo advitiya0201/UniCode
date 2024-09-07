@@ -20,7 +20,7 @@ public class Student {
     @Setter
     @Getter
     @Column(name="BITS ID", nullable = false)
-    private int bitsId;
+    private String bitsId;
 
     @Setter
     @Getter
@@ -48,7 +48,12 @@ public class Student {
     @Column(name = "sign_in_time", nullable = false, updatable = false)
     private LocalDateTime signInTime;
 
-    public Student(int bitsId, int labNumber, String name, int systemNumber) {
+    @Getter
+    @Setter
+    @Column(name="Hash Code")
+    private String hashCode;
+
+    public Student(String bitsId, int labNumber, String name, int systemNumber) {
         this.bitsId = bitsId;
         this.labNumber = labNumber;
         this.name = name;
