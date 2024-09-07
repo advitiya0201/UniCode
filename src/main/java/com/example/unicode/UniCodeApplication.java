@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UnicodeApplication {
+public class UniCodeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UnicodeApplication.class, args);
+		SpringApplication.run(UniCodeApplication.class, args);
 	}
 
 }
