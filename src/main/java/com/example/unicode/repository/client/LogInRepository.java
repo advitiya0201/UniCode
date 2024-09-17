@@ -8,4 +8,5 @@ import com.example.unicode.entity.client.LogIn;
 @Repository
 public interface LogInRepository extends JpaRepository<LogIn, Long> {
     // Add custom query methods if needed, e.g., findByStudentId()
+    LogIn findByBitsID(String bitsID);
 }

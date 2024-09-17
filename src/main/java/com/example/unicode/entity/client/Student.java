@@ -25,8 +25,8 @@ public class Student {
     @Column(name="Name", nullable = false)
     private String name;
 
-    public Student(String bitsId, String name) {
-        this.bitsID = bitsId;
+    public Student(String bitsID, String name) {
+        this.bitsID = bitsID;
         this.name = name;
     }
 

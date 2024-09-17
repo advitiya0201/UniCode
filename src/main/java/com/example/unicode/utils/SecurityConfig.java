@@ -7,9 +7,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -29,8 +26,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)  // Disable CSRF (if necessary)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/admin/**").hasRole(Constants.ADMIN)  // Secure /admin/** routes
-                        .requestMatchers("/api/**").permitAll()                // Allow public access to /api/** routes
-                        .anyRequest().authenticated()                          // Require authentication for all other requests
+                        .anyRequest().permitAll()                       // Allow public access to all other routes
                 )
                 .formLogin(form -> form
                         .defaultSuccessUrl("/admin/dashboard", true)  // Redirect after successful login
